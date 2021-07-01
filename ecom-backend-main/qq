@@ -1,0 +1,72 @@
+warning: LF will be replaced by CRLF in routes/api.js.
+The file will have its original line endings in your working directory
+[1mdiff --git a/routes/api.js b/routes/api.js[m
+[1mindex c990f42..89f5d64 100644[m
+[1m--- a/routes/api.js[m
+[1m+++ b/routes/api.js[m
+[36m@@ -9,9 +9,9 @@[m [mconst Products = require('../models/products')[m
+ const router = express.Router();[m
+ [m
+ [m
+[31m-const db = "mongodb://localhost:27017/newone";[m
+[32m+[m[32m/* const db = "mongodb://localhost:27017/newone"; */[m
+ [m
+[31m-/* mongoose.connect("mongodb://localhost:27017/newone", {[m
+[32m+[m[32mmongoose.connect("mongodb://localhost:27017/new", {[m
+     useCreateIndex:true,[m
+     useNewUrlParser:true,[m
+     useUnifiedTopology:true[m
+[36m@@ -20,15 +20,15 @@[m [mconst db = "mongodb://localhost:27017/newone";[m
+ }).catch((error) => {[m
+     console.log(error);[m
+ })[m
+[31m- */[m
+[31m-mongoose.connect(db, (err) => {[m
+[32m+[m
+[32m+[m[32m/* mongoose.connect(db, (err) => {[m
+     if (err) {[m
+         console.log(err)[m
+     }[m
+     else {[m
+         console.log('Database connected')[m
+     }[m
+[31m-})[m
+[32m+[m[32m}) */[m
+ [m
+ [m
+ router.get('/products', (req, res) => {[m
+[36m@@ -209,6 +209,34 @@[m [mrouter.post('/address/:id', (req, res) => {[m
+ })[m
+ [m
+ [m
+[32m+[m[32mrouter.post('/contactus/:id', (req, res) => {[m
+[32m+[m[32m    const user_id = req.params.id;[m
+[32m+[m[32m    Address.findOne({ user_id: user_id }, (err, add) => {[m
+[32m+[m[32m        if (err) {[m
+[32m+[m[32m            console.log(err)[m
+[32m+[m[32m        }[m
+[32m+[m[32m        if (add) {[m
+[32m+[m[32m            res.status(401).send('reported');[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            const { name, phone, address, pinCode } = req.body;[m
+[32m+[m[32m            let user = new Address({ name: name, email: email, phone: phone, message: message })[m
+[32m+[m[32m            user.save((err, user) => {[m
+[32m+[m[32m                if (err) {[m
+[32m+[m[32m                    console.log(err);[m
+[32m+[m[32m                } else {[m
+[32m+[m[32m                    console.log(user);[m
+[32m+[m[32m                    if (user) {[m
+[32m+[m[32m                        res.status(200).send('Success');[m
+[32m+[m[32m                    } else {[m
+[32m+[m[32m                        res.status(401).send('Error');[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                }[m
+[32m+[m[32m            })[m
+[32m+[m[32m        }[m
+[32m+[m[32m    })[m
+[32m+[m[32m})[m
+[32m+[m
+[32m+[m
+ router.get('/user-profile/:id' , (req,res)=>{[m
+     console.log(req.params.id);[m
+     User.findOne({_id:req.params.id} , (err , user)=>{[m
