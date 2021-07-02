@@ -13,6 +13,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 export class SignupComponent implements OnInit {
   public errMessage:any = "";
   options: FormGroup;
+  imageData:string
   floatLabelControl = new FormControl('male');
   constructor(private authService:UserAuthService ,
      private snakeBar:MatSnackBar , 
@@ -25,9 +26,27 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSelectedFile(event:any){
+    const file = (event.target).files[0];    
+    const allowedMimeTypes = ["image/png" , "image/jpg" , "image/jpeg"]; 
+    if(file && allowedMimeTypes.includes(file.type)){
+      const reader = new FileReader()
+      reader.onload=()=>{
+        this.imageData = reader.result as string;
+      }
+      reader.readAsDataURL(file) 
+      console.log(reader.readAsDataURL(file));
+      
+    }
+  }
 
   onSubmit(f:NgForm){
     console.log(f.value);
+    // this.imageData = "";
+    // let image = this.imageData
+    // let formData = {...f.value , image}
+    // console.log(formData);
+    
     this.authService.signup(f.value).subscribe(
       (res)=>{
         console.log(res);

@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const cors = require('cors')
 const app = express();
 const data = require('./products/p.json')
@@ -11,6 +12,8 @@ app.get('/' , (req,res)=>{
     res.send(data)
     // res.send('joty')
 })
+
+app.use('/images' , express.static(path.join('images')))
 
 app.use('/api' , require('./routes/api'))
 

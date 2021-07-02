@@ -15,7 +15,15 @@ const productsSchema = new Schema({
         }
     ],
     totalCost:Number,
-    totalProductNumber:Number
+    totalProductNumber:Number,
+    address:{
+        user_id:String,
+        name:String,
+        phone:Number,
+        address:String,
+        state:String,
+        country:String,
+    }
 })
 
 module.exports = mongoose.model('product' , productsSchema , 'products');

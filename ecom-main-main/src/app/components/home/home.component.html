@@ -1,13 +1,13 @@
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <!-- <div class="carousel-indicators">
+<!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
+    </div>
     <div class="carousel-inner">
         <div class="carousel-item item_1 active" data-bs-interval="10000">
-            <!-- <img src="../../../assets/slider/blue-headphones.jpg" class="d-block w-100 height" alt="..."> -->
+           
             <div class="carousel-caption d-md-block d-none">
                 <div class="c_text">
                     <h1>The Headphones</h1>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="carousel-item item_2" data-bs-interval="2000">
-            <!-- <img src="../../../assets/slider/enjoy.jpg" class="d-block w-100 height" alt="..."> -->
+          
             <div class="carousel-caption d-md-block d-none">
                 <div class="c_text">
                     <h1>The Tablets</h1>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="carousel-item item_3">
-            <!-- <img src="../../../assets/slider/happy-girl.jpg" class="d-block w-100 height" alt="..."> -->
+           
             <div class="carousel-caption d-md-block d-none">
                 <div class="c_text">
                     <h1>The Enjoy</h1>
@@ -45,11 +45,84 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
-<div class="container head">
+</div> -->
+
+ <!-- Carousel wrapper -->
+ <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+    </ol>
+
+    <!-- Inner -->
+    <div class="carousel-inner">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white text-center">
+              <h1 class="mb-3">Welcome to LifeStyle Store</h1>
+              <h5 class="mb-4">Best & Original Products With Less Money </h5>
+              <a class="btn btn-outline-success btn-lg m-2" routerLink="/products"
+                role="button" rel="nofollow">Start Shopping</a>
+              <!-- <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
+                target="_blank" role="button">Download MDB UI KIT</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white text-center">
+              <h1>You Can Find Here Best Outfits.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <div class="mask" style="
+              background: linear-gradient(
+                45deg,
+                rgba(29, 236, 197, 0.7),
+                rgba(91, 14, 214, 0.7) 100%
+              );
+            ">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white text-center">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <a class="btn btn-outline-danger btn-lg m-2"
+                routerLink="/products" role="button">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- Carousel wrapper -->
+
+
+
+<!-- <div class="container head">
     <div class="row">
         <div class="card p-3 pb-5 bg-dark">
-            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"> -->
             <h3 style="font-weight: bold;" class="text-white">Best Weakend Deals</h3>
             <div class="row">
                 <div class="col-md-3 col-4 mx-auto">
@@ -89,12 +162,11 @@
                     </mat-card>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="container-fluid" style="margin-top: 50px;">
+<div class="container" style="margin-top: 50px;">
     <div class="row">
         <div class="col-md-5 mx-auto col-10 cl-6 p-2 mb-3">
             <div>
@@ -122,14 +194,14 @@
 </div>
 
 
-<div class="heading  mb-5">
-    <div class="card cards">
+<div class="heading  mb-3 text-center">
+    <!-- <div class="card cards"> -->
         <h3 class="text-primary">Discover</h3>
         <h1 style="font-weight: bold;">What's Trending Now</h1>
-    </div>
+    <!-- </div> -->
 </div>
-<div class="container-fluid">
-    <div class="row">
+<div class="container">
+    <!-- <div class="row">
         <div class="col-lg-3 col-md-4 col-10 mx-auto mb-3" *ngFor="let product of products">
             <mat-card class="example-card">
                 <a routerLink="/product-details/{{product.id}}">
@@ -150,10 +222,53 @@
                 </mat-card-actions>
             </mat-card>
         </div>
+    </div> -->
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-10 mx-auto mb-3" *ngFor="let p of products">
+            <div class="card">
+                <div class="card-body d-flex flex-row">
+                    <a routerLink="/product-details/{{p.id}}">
+                    <img src="../../../assets/home/{{p.image}}" class="rounded-circle me-3"
+                        height="50px" width="50px" alt="avatar" /></a>
+                    <div>
+                        <h5 class="card-title font-weight-bold mb-2">{{p.title}}</h5>
+                        <p class="card-text">{{p.price | currency:'INR'}}</p>
+                    </div>
+                </div>
+                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                    <a routerLink="/product-details/{{p.id}}">
+                    <img class="img-fluid" src="../../../assets/home/{{p.image}}" style="height: 180px; width: 100%;"
+                        alt="Card image cap" /></a>
+                    <a routerLink="/product-details/{{p.id}}">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <!-- <p class="card-text collapse" id="collapseContent">
+                        Recently, we added several exotic new dishes to our restaurant menu. They come from
+                        countries such as Mexico, Argentina, and Spain. Come to us, have some wine and enjoy
+                        our juicy meals from around the world.
+                    </p> -->
+                    <div class="d-flex justify-content-between">
+                        <button class="btn"
+                        (click)="addToCart(p.id)">
+                        <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <div>
+                            <a class="a2a_button_whatsapp" href="https://www.addtoany.com/share" >
+                            <i class="fas fa-share-alt text-muted p-md-1 my-1 me-2" data-mdb-toggle="tooltip"
+                                data-mdb-placement="top" title="Share this post"></i></a>
+                            <i class="fas fa-heart text-muted p-md-1 my-1 me-0" data-mdb-toggle="tooltip"
+                                data-mdb-placement="top" title="I like it"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container text-center my-5">
 
-        <a class="btn btn-outline-primary" routerLink="/products" >Show More Products</a>
+        <a class="btn btn-outline-success" routerLink="/products" >Show More Products</a>
 
     </div>  
 
@@ -163,7 +278,7 @@
 <mat-divider></mat-divider>
 
 
-<div class="container-fluid" style="margin-top: 60px;">
+<div class="container" style="margin-top: 60px;">
     <div class="row">
         <div class="col-md-3">
             <div class="col-md-12 mb-3">

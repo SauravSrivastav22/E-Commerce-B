@@ -12,19 +12,24 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
+    name:'All Category'
+  },
+  {
     name: 'Electronics',
     children: [
-      { name: 'Tv' },
-      { name: 'Smartphones' },
-      { name: 'Watches' },
+      { name: 'Tablets' },
+      { name: 'Electronics' },
+      { name: 'Camera' },
+      {name:'Watch'},
+      {name:'Laptop'}
     ]
   }, {
-    name: 'Bulk Category',
+    name: 'Others Category',
     children: [
-      { name: 'Chair' },
-      { name: 'Beds' },
-      { name: 'Furnitures' },
-      { name: 'Others' }
+      { name: 'Books' },
+      { name: 'furniture' },
+      {name:'Exercise & Fitness'},
+      {name:'Furnishing'}
     ]
   },
 ];
@@ -50,10 +55,26 @@ export class ProductsComponent implements OnInit {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
     }
-
+    console.log(value);
+    
     return value;
   }
 
+  public err:boolean=false;
+
+  priceChange(event:any){
+    console.log(event.value);
+    this.productService.filterWithPrice(event.value).subscribe((res)=>{
+      this.allproducts = res
+    } , (err)=>{
+      console.log(err);
+    })
+    if(event.value == 0){
+      this.err = true;
+    }else{
+      this.err = false;
+    }
+  }
 
 
   private _transformer = (node: FoodNode, level: number) => {
@@ -68,13 +89,14 @@ export class ProductsComponent implements OnInit {
   public allproducts: any;
   // public newProducts:any;
 
-  constructor(private productService: ProductsService) {
+  constructor(public productService: ProductsService) {
     this.dataSource.data = TREE_DATA;
     this.productService.getAllProducts().subscribe((res) => {
       this.allproducts = res.allProducts;
       console.log(res);
     }, (err) => {
       console.log(err);
+      this.err = true;
     })
   }
 
@@ -105,5 +127,14 @@ export class ProductsComponent implements OnInit {
 
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+
+  filterProducts(data:any){
+    console.log(data);
+    this.productService.filterCategory(data).subscribe((res)=>{
+      console.log(res);
+      this.allproducts = res
+    })
+  }
 
 }

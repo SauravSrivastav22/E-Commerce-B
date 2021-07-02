@@ -186,7 +186,7 @@ export class ProductsService {
     totalCost+=incPrice;
     cartNumbers+=1;
     inCart+=1
-    if(inCart <=10){
+    if(inCart <=5){
       Object.values<any>(cart).find((item:any)=>item.title == title).inCart = inCart;
       localStorage.setItem('productsInCart' , JSON.stringify(cart))
       localStorage.setItem('totalCost' , JSON.stringify(totalCost))
@@ -231,7 +231,20 @@ export class ProductsService {
   // checkAddress(){
   //   return this._http.get()
   // }
-
+  private user_id:any
+  public address:any
+  getTotalAddress(){
+    this.user_id = localStorage.getItem('user_id');
+    this.getAddress(this.user_id).subscribe((res)=>{
+      console.log('from service',res);
+      this.address = res      
+    } , (err)=>{
+      console.log(err);
+    })
+  }
+  deleteAddress(id:any){
+    return this._http.delete<any>(`http://localhost:3000/api/delete/${id}`);
+  }
   checkAddress(){
     let user_id:any = localStorage.getItem('user_id');
     this.router.navigate([`/address/${user_id}`])
@@ -247,7 +260,20 @@ export class ProductsService {
     return this._http.post<any>('http://localhost:3000/api/products' , userData)
   }
 
-  checkOut(){
+  getLastOrder(){
+    let orderId:any = localStorage.getItem('order_id');
+    orderId = JSON.parse(orderId)
+    return this._http.get<any>(`http://localhost:3000/api/lastOrdered/${orderId}`)
+  }
+
+  updateUser(userData:any){
+    let user_id:any = localStorage.getItem('user_id');
+    return this._http.put(`http://localhost:3000/api/user-update/${user_id}`, userData)
+  }
+
+
+
+  checkOut(address:any){
 
     let user_id:any = localStorage.getItem('user_id');
     console.log(user_id);
@@ -272,13 +298,15 @@ export class ProductsService {
       user_id:user_id,
       products:products,
       totalCost:totalCost,
-      totalProductNumber:totalProductNumber
+      totalProductNumber:totalProductNumber,
+      address:address
     }
 
     console.log(userData);
     
     this.postProducts(userData).subscribe((res)=>{
       console.log(res);
+      localStorage.setItem('order_id' , JSON.stringify(res.result._id));
       if(res.message == 'success'){
         localStorage.removeItem('productsInCart');
         localStorage.removeItem('totalCost');
@@ -299,6 +327,44 @@ export class ProductsService {
     console.log(typeof(user_id));
     return this._http.get<any>(`http://localhost:3000/api/user-profile/${user_id}`)
   }
+
+  public user:any;
+  getUser(){
+    this.getUserProfile().subscribe((res)=>{
+      this.user = res
+    } , (err)=>{
+      console.log(err);
+    })
+  }
+
+  getTotalOrderedProducts(){
+    let user_id:any = localStorage.getItem('user_id')
+    // user_id  = JSON.parse(user_id)
+    console.log(user_id);
+    return this._http.get<any>(`http://localhost:3000/api/orderedProducts/${user_id}`);
+  }
+
+
+  filterCategory(data:any){
+    return this._http.get<any>(`http://localhost:3000/api/filterCategory/${data}`)
+  }
+
+
+  filterWithPrice(price:any){
+    return this._http.get<any>(`http://localhost:3000/api/filterWithPrice/${price}`)
+  }
+
+  addProfile(image:File){
+    let user_id:any = localStorage.getItem('user_id');
+    const profileData = new FormData()
+    profileData.append("image" , image);
+    this._http.put<any>(`http://localhost:3000/api/user-image/${user_id}` , profileData).subscribe((res)=>{
+      console.log(res);
+    })
+  }
+
+
+
 
 }
 

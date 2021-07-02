@@ -1,4 +1,4 @@
-.carousel-inner img{
+/* .carousel-inner img{
     background-size: cover;
     background-position: center;
 }
@@ -36,7 +36,7 @@
 .carousel-caption{
   position: absolute;
   top: 190px;
-}
+} */
 .c_text{
     text-align: left;
 }
@@ -121,11 +121,11 @@ mat-card:hover{
     transition: all 0.5s ease-in-out;
 }
 .cl-6:hover img{
-    transform: translateX(18px) scale(2);
+    transform: translateX(18px) scale(1.5);
 }
 .last_img{
     /* width: 313px; */
-    height: 210px!important;
+    height: 175px!important;
 }
 .cd{
     position: relative;
@@ -150,6 +150,60 @@ mat-card:hover{
 .cd:hover img{
     transform: rotate(10deg) scale(1.5);
 }
+.card{
+    transition: all 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 25px 25px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+.fas.fa-heart:hover {
+    color: #f44336 !important;
+  }
+  
+  .fas.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  }
+    /* Carousel styling */
+#introCarousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
+  height: 100vh;
+}
+
+.carousel-item:nth-child(1) {
+  /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); */
+  background-image: url('../../../assets/slider/slider3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-item:nth-child(2) {
+  /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg'); */
+  background-image: url('../../../assets/slider/slider1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-item:nth-child(3) {
+  /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); */
+  background-image: url('../../../assets/slider/slider2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+  #introCarousel {
+    margin-top: -58.59px;
+  }
+}
+
 @media (max-width:768px) {
    .height{
        height: 70vh;
