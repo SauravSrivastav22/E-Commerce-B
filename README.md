@@ -39,7 +39,7 @@ Goto the backend and find api.js and find const db next assign mongodb connectio
 Goto the backend and find api.js and typer email & pass from value.
 
 # Run
-after thean we need to run "npm start"
+after that we need to run "npm start"
 
 # and simply run 
 using commad  
@@ -48,7 +48,7 @@ using commad
 type ng serve  or ng serve --open
 
 # for back-end
-type npm install for ddoemload noe_modules
+type npm install for download node_modules
 
 now for run type npm start
 
