@@ -32,7 +32,23 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Install 
 we need to install 1st node_modules "npm install"
 
+# Connect MongoDB
+Goto the backend and find api.js and find const db next assign mongodb connection url.
+
+# Email Service
+Goto the backend and find api.js and typer email & pass from value.
+
 # Run
 after thean we need to run "npm start"
 
+# and simply run 
+using commad  
+
+# for front-end  
+type ng serve  or ng serve --open
+
+# for back-end
+type npm install for ddoemload noe_modules
+
+now for run type npm start
 
