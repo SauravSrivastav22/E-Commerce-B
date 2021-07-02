@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatListModule } from '@angular/material/list'
 import { MatDividerModule } from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 // import { }
 import {MatRadioModule} from '@angular/material/radio';
 const mat = [
@@ -36,7 +37,8 @@ const mat = [
   MatMenuModule,
   MatListModule,
   MatDividerModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDialogModule
 ]
 
 @NgModule({

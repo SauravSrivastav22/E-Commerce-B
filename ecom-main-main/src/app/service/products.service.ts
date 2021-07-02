@@ -17,37 +17,6 @@ export class ProductsService {
     return this._http.get<any>(`http://localhost:3000/api/products/${id}`)
   }
 
-  // addToCart(id:any){
-  //   this.cartItem = localStorage.getItem('cartItem');
-  //   if(this.cartItem.length !== null){
-  //     this.cartItem = [
-  //       ...this.cartItem,
-  //       id
-  //     ]
-  //   }else{
-  //     this.cartItem = [
-  //       id
-  //     ]
-  //   }
-  //   localStorage.setItem('cartItem' , JSON.stringify(this.cartItem));
-  // }
-
-  // getCartItemNumber(){
-  //   let cart:any = localStorage.getItem('cartItem')
-  //   cart = JSON.parse(cart);
-  //   return cart.length
-  // }
-
-  // getCartItem(){
-  //   this.cart = localStorage.getItem('cartItem');
-  //   this.cart = JSON.parse(this.cart)
-  //   return this.cart;
-  // }
-
-  // updateCart(){
-  //   let cart:any = localStorage.getItem('cartItem');
-  //   return JSON.parse(cart)
-  // }
 
   cartNumbers(product: any) {
     let productNumber: any = localStorage.getItem('cartNumbers')

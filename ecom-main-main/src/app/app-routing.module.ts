@@ -13,6 +13,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { CalenderComponent } from './components/calender/calender.component';
+import { DealsComponent } from './components/deals/deals.component';
 
 /* import { CalenderComponent } from './components/calender/calender.component'; */
 
@@ -56,9 +58,12 @@ const routes: Routes = [
   {
     path:"order-summary" , component:SummaryComponent , canActivate:[AuthGuardGuard]
   },
-  /* {
+  {
     path:"calender" , component:CalenderComponent
-  }, */
+  },
+  {
+    path:"deals" , component:DealsComponent , canActivate:[AuthGuardGuard]
+  },
   {
     path:"**" , redirectTo:""
   },

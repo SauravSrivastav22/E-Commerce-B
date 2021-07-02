@@ -1,0 +1,47 @@
+<!-- <p>user-profile-edit works!</p>
+ -->
+
+<h2 mat-dialog-title>Update Details</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="needs-validation" #f="ngForm" (ngSubmit)="updateDetails(f)" novalidate>
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control rounded-0" name="name" [(ngModel)]="this.user.name" #name="ngModel"
+                placeholder="Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone">E-mail</label>
+            <input type="email" class="form-control rounded-0" name="email" [(ngModel)]="this.user.email"
+                #email="ngModel" email placeholder="Email" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="" style="margin-right: 0.5rem;">Gender</label>
+            <input type="radio" name="gender" value="male" [(ngModel)]="this.user.gender" #gender="ngModel" required>
+            Male
+            <input type="radio" name="gender" value="female" [(ngModel)]="this.user.gender" #gender="ngModel" required>
+            Female
+        </div>
+        <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control rounded-0" name="phone" [(ngModel)]="this.user.phone"
+                #phone="ngModel" minlength="10" maxlength="10" placeholder="Phone" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="">Date of Birth</label>
+            <input type="date" name="dob" ngModel #dob="ngModel" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="address">Address</label>
+            <textarea name="" id="" cols="30" rows="5" name="address" [(ngModel)]="this.user.address" #address="ngModel"
+                required class="form-control rounded-0"></textarea>
+        </div>
+
+        <hr class="mb-4">
+
+        <button mat-raised-button color="primary" [disabled]="!f.valid">Update</button>
+
+
+        <button mat-button mat-dialog-close style="text-align: end;">Cancel</button>
+    </form>
+</mat-dialog-content>

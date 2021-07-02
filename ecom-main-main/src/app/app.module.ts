@@ -27,6 +27,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction';
 import { AddressDialogComponent } from './components/address-dialog/address-dialog.component';
+import { DealsComponent } from './components/deals/deals.component';
+import { QueriesComponent } from './components/queries/queries.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
 /* 
 import { DropDownButtonAllModule } from '@syncfusion/ej2-angular-splitbuttons';
 
@@ -73,7 +77,11 @@ FullCalendarModule.registerPlugins([
     SummaryComponent,
     ContactUsComponent,
     ThankyouComponent,
-    AddressDialogComponent, 
+    AddressDialogComponent,
+    DealsComponent,
+    QueriesComponent,
+    UploadImageComponent,
+    UserProfileEditComponent, 
 
    /*  CommonModule, 
     ScheduleAllModule, 
