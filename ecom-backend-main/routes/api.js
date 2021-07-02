@@ -8,7 +8,7 @@ const User = require('../models/user')
 const Address = require('../models/address')
 const Products = require('../models/products');
 const MimeNode = require('nodemailer/lib/mime-node');
-const router = express.Router();
+const router = express.Router(); 
 
 /* const db = "mongodb+srv://sahin_512:sahin123@cluster0.xvowe.mongodb.net/node?retryWrites=true&w=majority";
 
