@@ -10,7 +10,7 @@ const Products = require('../models/products');
 const MimeNode = require('nodemailer/lib/mime-node');
 const router = express.Router(); 
 
-/* const db = "mongodb+srv://sahin_512:sahin123@cluster0.xvowe.mongodb.net/node?retryWrites=true&w=majority";
+/* const db = "mongodb://localhost:27017/new";
 
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
