@@ -13,10 +13,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import { CalenderComponent } from './components/calender/calender.component';
 import { DealsComponent } from './components/deals/deals.component';
-
-/* import { CalenderComponent } from './components/calender/calender.component'; */
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { QueriesComponent } from './components/queries/queries.component';
 
 
 const routes: Routes = [
@@ -56,10 +55,13 @@ const routes: Routes = [
     path:"thankyou" , component:ThankyouComponent , canActivate:[AuthGuardGuard]
   },
   {
+    path:"queries" , component:QueriesComponent
+  },
+  {
     path:"order-summary" , component:SummaryComponent , canActivate:[AuthGuardGuard]
   },
   {
-    path:"calender" , component:CalenderComponent
+    path:"calender" , component:CalendarComponent 
   },
   {
     path:"deals" , component:DealsComponent , canActivate:[AuthGuardGuard]

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatModule } from './material/mat/mat.module';
 import { HomeComponent } from './components/home/home.component';
@@ -22,41 +22,16 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
-
-import { FullCalendarModule } from '@fullcalendar/angular'; 
-import dayGridPlugin from '@fullcalendar/daygrid'; 
-import interactionPlugin from '@fullcalendar/interaction';
 import { AddressDialogComponent } from './components/address-dialog/address-dialog.component';
 import { DealsComponent } from './components/deals/deals.component';
 import { QueriesComponent } from './components/queries/queries.component';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
-/* 
-import { DropDownButtonAllModule } from '@syncfusion/ej2-angular-splitbuttons';
-
-import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
-
-import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
-
-import { MaskedTextBoxModule, UploaderAllModule } from '@syncfusion/ej2-angular-inputs';
-
-import { ToolbarAllModule, ContextMenuAllModule } from '@syncfusion/ej2-angular-navigations';
-
-import { ButtonAllModule, CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
-
-import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
-
-import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
-
-import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
-
-import { CommonModule } from '@angular/common'; */
 
 
-FullCalendarModule.registerPlugins([ 
-  dayGridPlugin,
-  interactionPlugin
-]);
+/* import { ScheduleModule, View } from '@syncfusion/ej2-angular-schedule';
+import { WeekService, MonthService } from '@syncfusion/ej2-angular-schedule'; */
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 
@@ -81,28 +56,11 @@ FullCalendarModule.registerPlugins([
     DealsComponent,
     QueriesComponent,
     UploadImageComponent,
-    UserProfileEditComponent, 
+    UserProfileEditComponent,
 
-   /*  CommonModule, 
-    ScheduleAllModule, 
-    RecurrenceEditorAllModule,  
-    NumericTextBoxAllModule, 
-    TextBoxAllModule, 
-    DatePickerAllModule, 
-    TimePickerAllModule, 
-    DateTimePickerAllModule, 
-    CheckBoxAllModule, 
-    ToolbarAllModule, 
-    DropDownListAllModule, 
-    ContextMenuAllModule, 
-    MaskedTextBoxModule, 
-    UploaderAllModule, 
-    MultiSelectAllModule, 
-    TreeViewModule, 
-    ButtonAllModule, 
-    DropDownButtonAllModule, 
-    SwitchAllModule
- */
+    /* ScheduleModule, */
+    CalendarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -111,10 +69,12 @@ FullCalendarModule.registerPlugins([
     MatModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
-    FullCalendarModule
+    FormsModule
   ],
-  providers: [AuthGuardGuard],
+  providers: [AuthGuardGuard,
+    /* WeekService,
+    MonthService */
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

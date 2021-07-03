@@ -1,0 +1,40 @@
+<!-- <div class="control-section">
+  <div class="col-lg-9 content-wrapper">
+    <ejs-schedule
+      #schedule
+      height="650px"
+      [(selectedDate)]="selectedDate"
+      [eventSettings]="eventSettings"
+      currentView="Week" 
+      (popupOpen)="onPopupOpen($event)"
+      (actionComplete)="onActionComplete($event)"
+    >
+      <ng-template #eventSettingsTemplate let-data>
+        <div>
+          <div class="subject">{{data.Subject}}</div>
+          <div class="time">
+            Time: {{data.StartTime.toISOString()}} -
+            {{data.EndTime.toISOString()}}
+          </div>
+        </div>
+      </ng-template>
+    </ejs-schedule>
+  </div>
+</div>
+ -->
+<!-- 
+<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+  <e-views>
+    <e-view option="Week" startHour="07:00" endHour="15:00"></e-view>
+    <e-view option="WorkWeek" startHour="10:00" endHour="18:00"></e-view>
+    <e-view option="Month" [showWeekend]="showWeekend"></e-view>
+  </e-views>
+</ejs-schedule>
+ -->
+<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+  <e-views>
+    <e-view option="Week" startHour="07:00" endHour="15:00"></e-view>
+    <e-view option="WorkWeek" startHour="10:00" endHour="18:00"></e-view>
+    <e-view option="Month" [showWeekend]="showWeekend"></e-view>
+  </e-views>
+</ejs-schedule>

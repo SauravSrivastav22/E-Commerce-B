@@ -48,46 +48,7 @@
             </div>
         </div>
         <div class="col-md-9">
-            <!-- <div class="row">
-                <h1>All New Products</h1>
-                <div class="col-lg-4 col-md-4 col-10 mx-auto mb-5" *ngFor="let p of allproducts">
-                    <div class="card">
-                        <mat-card>
-                            <a routerLink="/product-details/{{p.id}}">
-                                <img mat-card-image src="../../../assets/home/{{p.image}}" alt="">
-                            </a>
-                            <mat-card-header class="mb-0">
-                                <mat-card-title>{{p.title | slice:0:16}}</mat-card-title>
-                                <mat-card-subtitle class="">{{p.price | currency:'INR'}}</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-actions class="mt-0">
-                                <button mat-flat-button class="btn btn-outline-primary rounded-0"
-                                    (click)="addToCart(p.id)">ADD TO CART</button>
-                            </mat-card-actions>
-                        </mat-card>
-                    </div>
-                </div>
-            </div> -->
-<!-- 
-            <div class="row">
-                <h1>Offer On</h1> -->
-                <!-- <div class="col-md-4 col-10 mx-auto mb-5" *ngFor="let n of newProducts">
-                    <div class="card">
-                    <mat-card>
-                        <a routerLink="/product-details/{{n.id}}">
-                        <img mat-card-image src="{{n.image}}" class="offer_on" alt="">
-                        </a>
-                        <mat-card-header class="mb-0">
-                            <mat-card-title>{{n.title | slice:0:16}}</mat-card-title>
-                            <mat-card-subtitle class="">{{n.price | currency:'INR'}}</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-actions class="mt-0">
-                            <button mat-flat-button class="btn btn-outline-primary rounded-0">ADD TO CART</button>   
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-                </div> -->
-            <!-- </div> -->
+
             <div class="row">
                 <h2>All Products</h2>
                 <h1 *ngIf="this.err" class="text-danger text-center">No Matching Product Find With ₹0.00 Price</h1>
