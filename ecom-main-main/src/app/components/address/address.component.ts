@@ -20,20 +20,9 @@ export class AddressComponent implements OnInit {
   addressForm:any = false;
   addressId:any;
   constructor(public productService:ProductsService , private router:ActivatedRoute , private route:Router,public dialog: MatDialog) {
-    // localStorage.getItem('user')
-    // this.productService.getAddress()
-    // console.log(this.productService.cartProducts);
+
     this.productService.getTotalAddress()
-    // const user_id = this.router.snapshot.paramMap.get('id');
-    // this.user_id = user_id;
-    // this.productService.getAddress(user_id).subscribe((res)=>{
-    //   console.log(res);
-    //        this.address = res;
-    //        console.log(this.address);
-           
-    // } , (err)=>{
-    //   console.log(err);
-    // })
+  
    }
 
   ngOnInit(): void {

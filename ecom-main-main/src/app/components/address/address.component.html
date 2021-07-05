@@ -16,28 +16,7 @@
                         </div>
                         <span class="text-muted">{{item.price | currency:'INR'}}x{{item.inCart}}</span>
                     </li>
-                    <!--   <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Second product</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$8</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Third item</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                        <div class="text-success">
-                            <h6 class="my-0">Promo code</h6>
-                            <small>EXAMPLECODE</small>
-                        </div>
-                        <span class="text-success">-$5</span>
-                    </li> -->
-    
+
                 </ul>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between">
@@ -45,17 +24,10 @@
                         <strong>{{this.productService.getTotalPrice() | currency:'INR' }}</strong>
                     </li>
                 </ul>
-    
-                <!-- <form class="card p-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Promo code">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Redeem</button>
-                        </div>
-                    </div>
-                </form> -->
+
+
             </div>
-    
+
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing address</h4>
                 <div class="card rounded-0">
@@ -71,16 +43,17 @@
                                         (change)="onSelectionChange(add._id)">
                                     <label for="" style="text-transform: capitalize;">{{add.name}} , {{add.phone}} ,
                                         {{add.address}} , {{add.country}}</label>
-                                    <button class="btn"  (click)="delete(add._id)"><i class="fas fa-trash"></i></button>
+                                    <button class="btn" (click)="delete(add._id)"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <br>
                                 <br>
                             </div>
-                            <button mat-raised-button color="warn" class="mt-2" style="margin-right: 0.5rem;" type="submit" *ngIf="this.productService.address.length"
-                                [disabled]="!f.valid" (click)="checkOut(f)" >Placed Ordered</button>
-                                <button mat-raised-button color="primary" (click)="openDialog()">Add New Address</button>
+                            <button mat-raised-button color="warn" class="mt-2" style="margin-right: 0.5rem;"
+                                type="submit" *ngIf="this.productService.address.length" [disabled]="!f.valid"
+                                (click)="checkOut(f)">Placed Ordered</button>
+                            <button mat-raised-button color="primary" (click)="openDialog()">Add Address</button>
                         </form>
-    
+
                     </div>
                 </div>
             </div>

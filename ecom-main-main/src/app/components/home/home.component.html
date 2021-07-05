@@ -1,10 +1,5 @@
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <!-- <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
+    
     <div class="carousel-inner">
         <div class="carousel-item item_1 active" data-bs-interval="10000">
             <!-- <img src="../../../assets/slider/blue-headphones.jpg" class="d-block w-100 height" alt="..."> -->
@@ -17,7 +12,7 @@
             </div>
         </div>
         <div class="carousel-item item_2" data-bs-interval="2000">
-            <!-- <img src="../../../assets/slider/enjoy.jpg" class="d-block w-100 height" alt="..."> -->
+            
             <div class="carousel-caption d-md-block d-none">
                 <div class="c_text">
                     <h1>The Tablets</h1>
@@ -27,7 +22,7 @@
             </div>
         </div>
         <div class="carousel-item item_3">
-            <!-- <img src="../../../assets/slider/happy-girl.jpg" class="d-block w-100 height" alt="..."> -->
+            
             <div class="carousel-caption d-md-block d-none">
                 <div class="c_text">
                     <h1>The Enjoy</h1>
@@ -49,7 +44,7 @@
 <div class="container head">
     <div class="row">
         <div class="card p-3 pb-5 bg-dark">
-            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"> -->
+             
             <h3 style="font-weight: bold;" class="text-white">Best Weakend Deals</h3>
             <div class="row">
                 <div class="col-md-3 col-4 mx-auto">
@@ -157,6 +152,40 @@
 
     </div>  
 
+    <!-- Offer Section -->
+
+
+    <div class="heading  mb-5">
+        <div class="card cards">
+            <h1 style="font-weight: bold; text-align: center;">Offer Section</h1>
+            <h3 class="text-primary" style="text-align: center;">More than 30 % Off</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-10 mx-auto mb-3" *ngFor="let product of products">
+            <mat-card class="example-card">
+                <a routerLink="/product-details/{{product.id}}">
+                <img mat-card-image class="mat-image" src="../../../assets/home/{{product.image}}"
+                    alt="Photo of a Shiba Inu">
+                    </a>
+                <mat-card-content class="mat-content">
+                    <b class="line_height">
+                        <h3 class="pName"> {{product.title | slice:0:25}}</h3>
+                        {{product.price | currency:'INR'}}
+                    </b>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-flat-button style="width: 100%;" (click)="addToCart(product.id)" >
+                        <mat-icon style="color: rgb(105, 201, 10);font-weight: bold;" >add_shopping_cart</mat-icon>
+                        <b>Add to Cart</b>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
 </div>
 
 
@@ -221,5 +250,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- Offer  section -->
+
+
+
     </div>
 </div>

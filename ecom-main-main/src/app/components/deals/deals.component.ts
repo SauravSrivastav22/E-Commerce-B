@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deals.component.css']
 })
 export class DealsComponent implements OnInit {
+
+  dtOptions: DataTables.Settings = {};
   orderedProducts:any;
   
   constructor(private productsService:ProductsService) { 
@@ -18,21 +20,11 @@ export class DealsComponent implements OnInit {
       console.log(err);
     })
   }
-
-  columnDefs = [
-    { field: 'make' },
-    { field: 'model' },
-    { field: 'price'}
-];
-
-rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-];
-
-
+  
+  
   ngOnInit(): void {
-  }
-
+    this.dtOptions = {
+      pagingType: 'full_numbers'
+    }
+}
 }

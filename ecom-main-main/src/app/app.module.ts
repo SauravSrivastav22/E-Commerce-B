@@ -21,17 +21,15 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { SummaryComponent } from './components/summary/summary.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-
 import { AddressDialogComponent } from './components/address-dialog/address-dialog.component';
 import { DealsComponent } from './components/deals/deals.component';
 import { QueriesComponent } from './components/queries/queries.component';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { UserProfileEditComponent } from './components/user-profile-edit/user-profile-edit.component';
-
-
-/* import { ScheduleModule, View } from '@syncfusion/ej2-angular-schedule';
-import { WeekService, MonthService } from '@syncfusion/ej2-angular-schedule'; */
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { DataTablesModule } from "angular-datatables";
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 
 
 
@@ -57,8 +55,6 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     QueriesComponent,
     UploadImageComponent,
     UserProfileEditComponent,
-
-    /* ScheduleModule, */
     CalendarComponent
 
   ],
@@ -69,7 +65,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     MatModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ScheduleModule,
+    DataTablesModule
   ],
   providers: [AuthGuardGuard,
     /* WeekService,
