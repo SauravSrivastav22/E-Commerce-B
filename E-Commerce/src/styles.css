@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-schedule/styles/material.css';
+
+
+#spinner {
+	-webkit-animation: frames 1s infinite linear;
+	animation: frames 1s infinite linear;
+	background: transparent;
+	border: 1.75vw solid #FFF;
+	border-radius: 100%;
+	border-top-color: #DF691A;
+	width: 20vw;
+	height: 20vw;
+	opacity: .6;
+	padding: 0;
+	position: absolute;
+	z-index: 999;
+}
+@keyframes frames {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+  
+  #pause {
+      display: block;
+      background:
+          rgba(0, 0, 0, 0.66)
+          no-repeat
+          0 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background: radial-gradient(ellipse at right bottom, #863838 5%, #d42dab 25%, #e7e0eb 50%, #030243 100%);
+    /* background-repeat: no-repeat, repeat;  */
+    padding-top: 0.5%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
