@@ -1,13 +1,13 @@
 const express = require('express');
-const mongoose = require('mongoose');
+/* const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const multer = require('multer')
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer') */
 const data = require('../products/products.json')
-const User = require('../models/user')
-const Address = require('../models/address')
+/* const User = require('../models/user')
+const Address = require('../models/address') */
 const Products = require('../models/products');
-const MimeNode = require('nodemailer/lib/mime-node');
+/* const MimeNode = require('nodemailer/lib/mime-node'); */
 const router = express.Router(); 
 
 /* const db = "mongodb://localhost:27017/new";
@@ -22,7 +22,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, (err) 
     }
 }) */
 
-
+/* 
 mongoose.connect("mongodb://localhost:27017/newone", {
     useCreateIndex:true,
     useNewUrlParser:true,
@@ -53,6 +53,17 @@ const fileFilter = (req,file , cb)=>{
 
 
 const storage = multer({storage:diskStorage , fileFilter:fileFilter}).single('image')
+
+router.put('/user-image/:id',storage, (req,res)=>{
+    const imagePath = 'http://localhost:3000/images/' + req.file.filename;
+    User.findByIdAndUpdate(req.params.id , {imagePath:imagePath} , (err , result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.status(200).send(result)
+        }
+    })
+}) */
 
 router.get('/products', (req, res) => {
     res.status(200).send(data)
@@ -98,7 +109,7 @@ router.post('/products', (req, res) => {
     // console.log(req.body)
 })
 
-router.get('/lastOrdered/:id', (req, res) => {
+/* router.get('/lastOrdered/:id', (req, res) => {
     const id = req.params.id;
     Products.find({ _id: req.params.id }, (err, result) => {
         if (err) {
@@ -107,9 +118,9 @@ router.get('/lastOrdered/:id', (req, res) => {
             res.status(200).send(result)
         }
     })
-})
+}) */
 
-router.post('/signup', (req, res) => {
+/* router.post('/signup', (req, res) => {
     let userData = req.body;
     console.log(userData)
     User.findOne({ email: userData.email }, (err, user) => {
@@ -135,14 +146,14 @@ router.post('/signup', (req, res) => {
                             port: 587,
                             secure: false, // true for 465, false for other ports
                             auth: {
-                                user: 'Enter Your Email', // generated ethereal user
-                                pass: 'Password', // generated ethereal password
+                                user: 'srivastavsaurav22@gmail.com', // generated ethereal user
+                                pass: 'Saurav@111', // generated ethereal password
                             },
                         });
 
                         // send mail with defined transport object
                         let info = await transporter.sendMail({
-                            from: '"V STORE" <Enter Your Email>', // sender address
+                            from: '"V STORE" <srivastavsaurav22@gmail.com>', // sender address
                             to: userData.email, // list of receivers
                             subject: "Registration confirmation", // Subject line
                             //   text: "Hello world?", // plain text body
@@ -164,8 +175,8 @@ router.post('/signup', (req, res) => {
     })
 
 })
-
-
+ */
+/* 
 router.post('/login', (req, res) => {
     const userData = req.body;
     User.findOne({ email: userData.email }, (err, user) => {
@@ -184,9 +195,9 @@ router.post('/login', (req, res) => {
             }
         }
     })
-})
+}) */
 
-
+/* 
 
 router.post('/address/:id', (req, res) => {
     const user_id = req.params.id;
@@ -209,16 +220,7 @@ router.post('/address/:id', (req, res) => {
 
 })
 
-router.put('/user-image/:id',storage, (req,res)=>{
-    const imagePath = 'http://localhost:3000/images/' + req.file.filename;
-    User.findByIdAndUpdate(req.params.id , {imagePath:imagePath} , (err , result)=>{
-        if(err){
-            console.log(err);
-        }else{
-            res.status(200).send(result)
-        }
-    })
-})
+
 
 
 router.put('/user-update/:id', (req, res) => {
@@ -302,34 +304,6 @@ router.delete('/delete/:id', (req, res) => {
 })
 
 
-router.post('/contactus/:id', (req, res) => {
-    const user_id = req.params.id;
-    Address.findOne({ user_id: user_id }, (err, add) => {
-        if (err) {
-            console.log(err)
-        }
-        if (add) {
-            res.status(401).send('reported');
-        } else {
-            const { name, phone, address, pinCode } = req.body;
-            let user = new Address({ name: name, email: email, phone: phone, message: message })
-            user.save((err, user) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(user);
-                    if (user) {
-                        res.status(200).send('Success');
-                    } else {
-                        res.status(401).send('Error');
-                    }
-                }
-            })
-        }
-    })
-})
-
-
 
 router.get('/user-profile/:id', (req, res) => {
     console.log(req.params.id);
@@ -344,7 +318,7 @@ router.get('/user-profile/:id', (req, res) => {
             }
         }
     })
-})
+}) */
 
 
 

@@ -142,7 +142,7 @@ export class ProductsService {
   }
 
 
-  increment(title:any){
+  increment(title:any){ 
     let cart:any = localStorage.getItem('productsInCart');
     let cartNumbers:any = localStorage.getItem('cartNumbers');
     let totalCost:any = localStorage.getItem('totalCost');

@@ -1,6 +1,6 @@
 import { ProductsService } from './../../service/products.service';
-import { UserAuthService } from './../../service/user-auth.service';
-import { AuthGuardGuard } from './../../guard/auth-guard.guard';
+/* import { UserAuthService } from './../../service/user-auth.service';
+import { AuthGuardGuard } from './../../guard/auth-guard.guard'; */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,8 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   public cartNumber:any;
   showFiller = false;
-  constructor(public authGuard:AuthGuardGuard 
-    ,public authUser:UserAuthService,public productService:ProductsService ) {  
+  constructor(public productService:ProductsService ) {  
     //  this.cartNumber = this.productService.getCartNumber()
       
   }

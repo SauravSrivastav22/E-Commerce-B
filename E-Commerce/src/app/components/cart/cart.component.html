@@ -11,7 +11,7 @@
                 <table datatable [dtOptions]="dtOptions" class="row-border hover" style="color: goldenrod;"
                     *ngIf="this.productService.getTotalPrice()">
                     <thead>
-                        <tr>
+                        <tr style="color: black;">
                             <th>Image</th>
                             <th>Name</th>
                             <th>Quantity</th>
@@ -21,7 +21,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of  this.productService.cartProducts">
+                        <tr *ngFor="let item of  this.productService.cartProducts" style="color: black;">
                             <td>
                                 <img src="../../../assets/home/{{item.image}}" class="img-fluid" width="80" alt="">
                             </td>
